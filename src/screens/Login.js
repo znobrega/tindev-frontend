@@ -1,18 +1,30 @@
 import React, { useState } from "react";
 
+import api from "../sevices/api";
+
 import Logo from "../assets/logo.svg";
 
 import "./Login.css";
 
-function Login() {
+function Login({ history }) {
   const [username, setUsername] = useState("");
-  // 41:08
-  function handleInputChange(e) {
-    setUsername(e.target.value);
+
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+
+    // Confirm with api
+    // const response = await api.post("/dev", {
+    //   username
+    // });
+
+    //const { _id } = response.data;
+
+    const _id = 123123;
+    history.push(`/dev/${_id}`);
   }
 
-  function handleFormSubmit(e) {
-    e.preventDefault();
+  function handleInputChange(e) {
+    setUsername(e.target.value);
   }
 
   return (
@@ -25,7 +37,7 @@ function Login() {
           value={username}
           onChange={handleInputChange}
         />
-        <button>Entrar</button>
+        <button type='submit'>Entrar</button>
       </form>
     </div>
   );
