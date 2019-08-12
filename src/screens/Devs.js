@@ -12,56 +12,56 @@ import "./Devs.css";
 function Devs({ match }) {
   const [users, setUsers] = useState([
     {
-      _id: 123123,
+      _id: 1231232,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
         "https://images.unsplash.com/photo-1565439361543-75e9868203c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      _id: 123123,
+      _id: 12312322,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
         "https://images.unsplash.com/photo-1565439361543-75e9868203c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      _id: 123123,
+      _id: 123123222,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
         "https://images.unsplash.com/photo-1565439361543-75e9868203c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      _id: 123123,
+      _id: 12312333,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
         "https://images.unsplash.com/photo-1565439361543-75e9868203c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      _id: 123123,
+      _id: 12344123,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
         "https://images.unsplash.com/photo-1565439361543-75e9868203c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      _id: 123123,
+      _id: 12355123,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
         "https://images.unsplash.com/photo-1565432680364-1316c4297904?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
     },
     {
-      _id: 123123,
+      _id: 12316623,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
         "https://images.unsplash.com/photo-1565439361543-75e9868203c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
     },
     {
-      _id: 123123,
+      _id: 123188923,
       name: "carlos",
       bio: "eae meu amigo",
       avatar:
@@ -85,28 +85,28 @@ function Devs({ match }) {
   }, [match.params._id, match.params.id]);
 
   async function handleLike(id) {
-    // await api.post(`/devs/${id}/likes`, null, {
-    //   headers: {
-    //     user: match.params.id
-    //   }
-    // });
+    await api.post(`/devs/${id}/likes`, null, {
+      headers: {
+        user: match.params.id
+      }
+    });
 
     setUsers(users.filter(user => user._id !== id));
   }
 
   async function handleDislike(id) {
-    // await api.post(`/devs/${id}/dislikes`, null, {
-    //   headers: {
-    //     user: match.params.id
-    //   }
-    // });
+    await api.post(`/devs/${id}/dislikes`, null, {
+      headers: {
+        user: match.params.id
+      }
+    });
 
     setUsers(users.filter(user => user._id !== id));
   }
 
   return (
     <div className='main-container'>
-      <Link>
+      <Link to='/'>
         <img src={logo} alt='Tindev' />
       </Link>
 
